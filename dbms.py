@@ -2,13 +2,14 @@ import datetime as dt
 import mysql.connector
 
 import security
+import os
 
 
 def createRunners():
     myDB = mysql.connector.connect(
         host="127.0.0.1",
-        user="jtushar3011",
-        password="jain tushar 3011",
+        user= os.environ['DBMS_USER'],
+        password= os.environ['DBMS_PASS'],
         database="BMS"
     )
     myCursor = myDB.cursor()
