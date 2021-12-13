@@ -1,0 +1,65 @@
+{%include 'headers.html'%}
+<title>Find Bus | BMS</title>
+{%include 'navbar.html'%}
+
+    <h1 style="text-align: center">Find Buses</h1>
+
+    {% if error %}
+    <div class="alert alert-danger">
+        No buses currently available
+    </div>
+    {% endif %}
+
+    <form method="post", action="{{url_for('findbuses')}}">
+        <div class="input-group m-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Source City</span>
+            </div>
+            <select class="custom-select" name="source">
+                {% for city in cities %}
+                <option>{{city}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="input-group m-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Destination City</span>
+            </div>
+            <select class="custom-select" name="dest">
+                {% for city in cities %}
+                <option>{{city}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input-group m-1">
+             <div class="input-group-prepend">
+                    <span class="input-group-text">Travel Date</span>
+                </div>
+                <input type="date" name="date" style="border-color: #d1d7dc; color: #5f656c;" class="border rounded-right" min="{{today}}">
+        </div>
+
+        <button type="submit" class="btn btn-success ml-1" >Search Details</button>
+    </form>
+    <br>
+
+    {% for bus in selBus %}
+    <div class="mw-100 border border-light rounded-lg p-1 m-1 clearfix" style="color:white; background-color: rgba(255, 255, 255, 0.2);">
+        <h3>Buses Available:</h3>
+        <p>Bus ID: {{ bus[0] }}</p>
+        <p>{{ bus[2] }} - {{ bus[3] }}</p>
+        {% if bus[16] == 1 %}
+        <p>{{ bus[9] }} {{ bus[5] }} - {{ bus[17] }} {{ bus[8] }}</p>
+        {% endif %}
+        {% if bus[16] == 2 %}
+        <p>{{ bus[9] }} {{ bus[7] }} - {{ bus[17] }} {{ bus[6] }}</p>
+        {% endif %}
+        <p>Seater Available: {{ bus[14] }}</p>
+        <p>Sleepers Available: {{ bus[15] }}</p>
+        <a href="{{ url_for('bookseat', i=bus[0], date=bus[9], date1=bus[17], j=bus[14], type='ST') }}" class="btn btn-success float-right m-2 {% if bus[14] == 0 %}disabled{% endif %}">Book Seater this bus</a>
+        <a href="{{ url_for('bookseat', i=bus[0], date=bus[9], date1=bus[17], j=bus[15], type='SL') }}" class="btn btn-success float-right m-2 {% if bus[15] == 0 %}disabled{% endif %}">Book Sleeper this bus</a>
+    </div>
+    {% endfor %}
+
+</body>
+</html>

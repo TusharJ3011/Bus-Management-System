@@ -1,0 +1,25 @@
+
+<div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#MonthRevenue">Activate/Deativate Bus</a>
+    </div>
+    <div id="MonthRevenue" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+
+            <form method="post", action="{{url_for('form4')}}">
+                <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Bus ID</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter Bus ID" name="busNo">
+
+                </div>
+
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-success" >Activate/Deactivate</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

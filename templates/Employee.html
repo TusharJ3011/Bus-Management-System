@@ -1,0 +1,15 @@
+{%include 'headers.html'%}
+<title>Employee | BMS</title>
+{%include 'navbar.html'%}
+
+    <h1 style="text-align: center">Job Record</h1>
+    {% for job in jobs %}
+    <div class="mw-100 border border-light rounded-lg p-1 m-1 clearfix" style="color:white; background-color: rgba(255, 255, 255, 0.2);">
+        <p>Bus ID: {{ job[1] }}</p>
+        <p>Date: {{ job[2] }}</p>
+        <a href="#" class="btn btn-success float-right m-2">Send Completion Signal</a>
+    </div>
+    {% endfor %}
+
+</body>
+</html>

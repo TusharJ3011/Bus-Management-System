@@ -1,0 +1,38 @@
+{%include 'headers.html'%}
+<title>Track Bus | BMS</title>
+{%include 'navbar.html'%}
+
+    <h1 style="text-align: center">Check Ticket Status</h1>
+
+    {% if error %}
+    <div class="alert alert-danger">
+        Wrong Ticket ID
+    </div>
+    {% endif %}
+
+    <form method="post", action="{{url_for('ticketstatus')}}">
+        <div class="input-group m-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Ticket ID</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Enter your ticked ID" name="id">
+        </div>
+
+        <button type="submit" class="btn btn-success ml-1" >Check Status</button>
+    </form>
+    <br>
+
+    {% if show %}
+    <div id="'details" class=" m-1" style="color: white">
+        <h3>Bus Details:</h3>
+        <p>Bus ID: {{ details[1] }}</p>
+        <p>Bus Number: {{ details[2] }}</p>
+        <p>Date: {{ details[5] }}</p>
+        <p>{{ details[6] }} - {{ details[7] }}</p>
+        <p>{{ details[8] }} - {{ details[9] }}</p>
+        <p>Seat Number:{{ details[4] }}{{ details[3] }} </p>
+    </div>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+
+<div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#newBranch">Add/Edit Bus</a>
+    </div>
+    <div id="newBranch" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+            <form method="post", action="{{url_for('form3')}}">
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Bus Number</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter Bus Number" name="busNo">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter City 1</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter City Name" name="city1">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter City 2</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter City Name" name="city2">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter Frequency</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="Enter Frequency of Bus Travel" name="frequency" min="0" max="365">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter Departure Time from City 1</span>
+                    </div>
+                    <input type="time" style="border-color: #d1d7dc; color: #5f656c;" class="border rounded-right" id="birthdaytime" name="dept1">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter Arrival Time from City 1</span>
+                    </div>
+                    <input type="time" style="border-color: #d1d7dc; color: #5f656c;" class="border rounded-right" id="birthdaytime" name="arrv1">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter Departure Time from City 2</span>
+                    </div>
+                    <input type="time" style="border-color: #d1d7dc; color: #5f656c;" class="border rounded-right" id="birthdaytime" name="dept2">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter Arrival Time from City 2</span>
+                    </div>
+                    <input type="time" style="border-color: #d1d7dc; color: #5f656c;" class="border rounded-right" id="birthdaytime" name="arrv2">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter Starting Date</span>
+                    </div>
+                    <input type="date" style="border-color: #d1d7dc; color: #5f656c;" class="border rounded-right" id="birthdaytime" name="sDate">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Seater Available</span>
+                    </div>
+                    <select class="custom-select" name="seater">
+                        {% for i in range(0,201) %}
+                            <option>{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Sleeper Available</span>
+                    </div>
+                    <select class="custom-select" name="sleeper">
+                        {% for i in range(0,101) %}
+                            <option>{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Days Taken</span>
+                    </div>
+                    <select class="custom-select" name="daysTaken">
+                        {% for i in range(0,101) %}
+                            <option>{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success m-1" >Add Bus</button>
+            </form>
+
+      </div>
+    </div>
+</div>

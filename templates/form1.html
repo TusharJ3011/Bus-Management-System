@@ -1,0 +1,37 @@
+
+<div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#collapseOne">Add Job</a>
+    </div>
+    <div id="collapseOne" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+            <form method="post", action="{{url_for('form1')}}">
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Employee ID</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter Employee ID" name="emp">
+
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Bus ID</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter Bus ID" name="busnum">
+
+                </div>
+
+                <div class="input-group m-1">
+                     <div class="input-group-prepend">
+                            <span class="input-group-text">Date</span>
+                        </div>
+                        <input type="date" name="date1" style="border-color: #d1d7dc; color: #5f656c;" class="border rounded-right" min="{{today}}">
+                </div>
+                <button type="submit" class="btn btn-success m-1" >Add Job</button>
+            </form>
+            <br>
+
+              </div>
+            </div>
+        </div>

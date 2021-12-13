@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login | BMS</title>
+
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Google Icons Library -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        #loginArea {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        html {
+            background: url("../static/loginBG-min.jpeg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+}
+    </style>
+</head>
+<body>
+<div id="bg">
+    <div class="container-sm py-3 rounded-lg" id="loginArea">
+        <form method="post" action="{{url_for('employeelogin')}}">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Employee ID</span>
+                </div>
+                <input type="text" class="form-control" name='name' placeholder="Enter your ID" required>
+            </div>
+            {% if error == 'name' %}
+            <span style="color: red">Incorrect ID</span>
+            <br>
+            {%endif%}
+
+            <div class="input-group mt-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Password</span>
+                </div>
+                <input type="password" class="form-control" name='password' placeholder="Enter your password" required>
+            </div>
+            {% if error == 'password' %}
+            <span style="color: red">Incorrect Password</span>
+            <br>
+            {%endif%}
+
+            <button type="submit" class="btn btn-success btn-lg mt-3">Login</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

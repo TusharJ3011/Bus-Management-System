@@ -1,0 +1,15 @@
+    <link rel = "icon" href ="../static/SMS_logo_black.png" type = "image/png"></head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a href="{{url_for('home')}}" style="font-family: 'Roboto Slab', serif; font-size: x-large;">BMS</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsible_1"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="collapsible_1">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="{{url_for('home')}}" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="{{url_for('findbuses')}}" class="nav-link">Find Buses</a></li>
+{#            <li class="nav-item"><a href="{{url_for('trackbus')}}" class="nav-link">Track Bus</a></li>#}
+            <li class="nav-item"><a href="{{url_for('ticketstatus')}}" class="nav-link">Check Ticket Status</a></li>
+          </ul>
+        </div>
+    </nav>

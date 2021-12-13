@@ -1,0 +1,59 @@
+
+<div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#newemployee">Add New Employee</a>
+    </div>
+    <div id="newemployee" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+            <form method="post", action="{{url_for('form2')}}">
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Employee Name</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter Employee Name" name="ename">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Employee Password</span>
+                    </div>
+                    <input type="password" class="form-control" name="epassword">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Select Job</span>
+                    </div>
+                    <select class="custom-select" name="job">
+                        <option>Driver</option>
+                        <option>Conductor</option>
+                    </select>
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Phone Number</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="Enter Employee's Phone Number" name="phoneNumber" min="1000000000" max="9999999999">
+                </div>
+
+                <div class="input-group m-1">
+                     <div class="input-group-prepend">
+                            <span class="input-group-text">Date Of Birth</span>
+                     </div>
+                     <input type="date" name="edob" style="border-color: #d1d7dc; color: #5f656c;" class="border rounded-right" max="{{emindate}}">
+                </div>
+
+                <div class="input-group m-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Address</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter Employee's Address" name="eaddress">
+                </div>
+
+                <button type="submit" class="btn btn-success m-1" >Add Employee</button>
+            </form>
+            <br>
+      </div>
+    </div>
+</div>
