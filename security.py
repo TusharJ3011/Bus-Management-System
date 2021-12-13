@@ -1,8 +1,8 @@
 import werkzeug.security
+import os
 
-# Password :
-ADMINUSERNAME = 'O21GROUP9'.lower()
-ADMINPASSWORD = 'pbkdf2:sha256:260000$9Pn31aie3pRdz1Nj$9d0bfe1116920058fab3328d46c8b4329c1254a43b2da995ac8264d7d3848382'
+ADMINUSERNAME = os.environ['ADMIN_USER'].lower()
+ADMINPASSWORD = os.environ['ADMIN_PASS']
 
 
 def securePassword(password):
