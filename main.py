@@ -1,12 +1,14 @@
 from flask import render_template, url_for, Flask, request, redirect, session
 import datetime as dt
+import os
 
 # Local Files
 import dbms
 import security
 
+
 app = Flask(__name__)
-app.secret_key = 'blablabla'
+app.secret_key = os.environ['APP_KEY']
 app.register_error_handler(404, 'pageNotFound')
 
 
